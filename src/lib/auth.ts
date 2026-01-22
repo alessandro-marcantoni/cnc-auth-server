@@ -10,5 +10,9 @@ export const auth: Auth<BetterAuthOptions> = betterAuth({
     enabled: true,
   },
   plugins: [jwt()],
+  session: {
+    expiresIn: 60 * 60 * 24 * 15, // 7 days
+    updateAge: 60 * 60 * 24, // 1 day (every 1 day the session
+  },
   //...
 });
